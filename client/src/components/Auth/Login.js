@@ -43,6 +43,7 @@ const Login = ({ classes }) => {
         variant="h2"
         gutterBottom
         noWrap
+        buttonText="Login with Google"
         style={{
           color: "rgb(66, 133, 244)"
         }}
