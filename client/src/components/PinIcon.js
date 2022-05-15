@@ -1,5 +1,5 @@
-import React from "react";
-import PlaceTwoTone from "@material-ui/icons/PlaceTwoTone";
+import React from "react"
+import PlaceTwoTone from "@material-ui/icons/PlaceTwoTone"
 
 export default ({size, color, onClick}) => (
   <PlaceTwoTone
@@ -9,4 +9,4 @@ export default ({size, color, onClick}) => (
       color,
     }}
   />
-);
+)

@@ -1,14 +1,16 @@
-import React, { useContext } from "react";
-import { withStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import MapIcon from "@material-ui/icons/Map";
-import Typography from "@material-ui/core/Typography";
+import React, { useContext } from "react"
+import { withStyles } from "@material-ui/core/styles"
+import AppBar from "@material-ui/core/AppBar"
+import Toolbar from "@material-ui/core/Toolbar"
+import MapIcon from "@material-ui/icons/Map"
+import Typography from "@material-ui/core/Typography"
+import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery"
 
-import Context from "../context";
+import Context from "../context"
 import Signout from "../components/Auth/Signout"
 
 const Header = ({ classes }) => {
+  const mobileSize = useMediaQuery("(max-width: 650px)")
   const { state } = useContext(Context)
   const { currentUser } = state
 
@@ -18,6 +20,7 @@ const Header = ({ classes }) => {
         <div className={classes.grow}>
           <MapIcon className={classes.icon} />
           <Typography
+            className={mobileSize ? classes.mobile : ""}
             component="h1"
             variant="h2"
             color="inherit"
@@ -36,7 +39,8 @@ const Header = ({ classes }) => {
                 referrerpolicy="no-referrer"
               />
               <Typography
-                component="h3"
+                className={mobileSize ? classes.mobile : ""}
+                component="h5"
                 color="inherit"
                 noWrap
               >
@@ -49,7 +53,7 @@ const Header = ({ classes }) => {
       </Toolbar>
     </AppBar>
   </div>
-};
+}
 
 const styles = theme => ({
   root: {
@@ -73,6 +77,6 @@ const styles = theme => ({
     borderRadius: "90%",
     marginRight: theme.spacing.unit * 2
   }
-});
+})
 
-export default withStyles(styles)(Header);
+export default withStyles(styles)(Header)

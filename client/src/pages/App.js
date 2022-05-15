@@ -11,4 +11,4 @@ const App = () => {
   </>
 }
 
-export default withRoot(App);
+export default withRoot(App)

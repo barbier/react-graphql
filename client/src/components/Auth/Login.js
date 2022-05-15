@@ -35,6 +35,10 @@ const Login = ({ classes }) => {
 
   const onFailure = err => {
     console.error(`Error logging in: ${err}`)
+    dispatch({
+      type: "IS_LOGGED_IN",
+      payload: false,
+    })
   }
 
   return (
@@ -60,7 +64,7 @@ const Login = ({ classes }) => {
       />
     </div>
   )
-};
+}
 
 const styles = {
   root: {
@@ -70,6 +74,6 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
   }
-};
+}
 
 export default withStyles(styles)(Login)
